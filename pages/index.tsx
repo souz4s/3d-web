@@ -1,14 +1,16 @@
-import React from "react";
 import Head from "next/head";
+import Background from "./components/Background";
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>seugap</title>
       </Head>
-      <main />
-    </div>
+      <main>
+        <Background />
+      </main>
+    </>
   );
 };
 
