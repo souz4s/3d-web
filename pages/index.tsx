@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Background from "./components/Background";
 
 const Home: React.FC = () => {
   return (
@@ -7,9 +6,7 @@ const Home: React.FC = () => {
       <Head>
         <title>seugap</title>
       </Head>
-      <main>
-        <Background />
-      </main>
+      <main />
     </>
   );
 };
