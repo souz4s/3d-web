@@ -8,5 +8,6 @@ export default createGlobalStyle`
 	  border: 0;
 	  vertical-align: baseline;
     list-style: none;
+    overflow: hidden;
   }
 `
