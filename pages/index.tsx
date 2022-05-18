@@ -1,4 +1,5 @@
 import Head from "next/head";
+import NiclaVision from "../models/NiclaVision";
 
 const Home: React.FC = () => {
   return (
@@ -6,7 +7,9 @@ const Home: React.FC = () => {
       <Head>
         <title>seugap</title>
       </Head>
-      <main />
+      <main>
+        <NiclaVision />
+      </main>
     </>
   );
 };
