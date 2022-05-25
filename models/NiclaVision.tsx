@@ -50,7 +50,7 @@ const NiclaVision: React.FC = () => {
       const animate = () => {
         camera.position.y = 130;
         camera.position.x = 0;
-        camera.position.z = 30;
+        camera.position.z = 31;
         camera.lookAt(target);
 
         renderer.render(scene, camera);
