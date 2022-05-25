@@ -9,5 +9,6 @@ export default createGlobalStyle`
 	  vertical-align: baseline;
     list-style: none;
     overflow: hidden;
+    cursor: none;
   }
 `
