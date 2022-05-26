@@ -23,7 +23,7 @@ const Cursor: React.FC = () => {
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        opacity: 0.75;
+        opacity: 1;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     `;
 
@@ -54,7 +54,7 @@ const Cursor: React.FC = () => {
 
         const toggleCursorVisibility = () => {
             if (cursoVisible.current) {
-                dotOutline.current.style.opacity = 0.75;
+                dotOutline.current.style.opacity = 1;
             } else {
                 dotOutline.current.style.opacity = 0;
             }
