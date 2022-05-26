@@ -34,7 +34,6 @@ const Cursor: React.FC = () => {
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     `;
 
     const dot = useRef(null);
@@ -55,20 +54,16 @@ const Cursor: React.FC = () => {
 
         const toggleCursorVisibility = () => {
             if (cursoVisible.current) {
-                dot.current.style.opacity = 0;
                 dotOutline.current.style.opacity = 0.75;
             } else {
-                dot.current.style.opacity = 0;
                 dotOutline.current.style.opacity = 0;
             }
         };
 
         const toggleCursorSize = () => {
             if (cursorEnlarged.current) {
-                dot.current.style.transform = "translate(-50%, -50%) scale(0.75)";
                 dotOutline.current.style.transform = "translate(-50%, -50%) scale(1.75)";
             } else {
-                dot.current.style.transform = "translate(-50%, -50%) scale(1)";
                 dotOutline.current.style.transform = "translate(-50%, -50%) scale(1)";
             }
         };
