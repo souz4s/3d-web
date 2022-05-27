@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { loadGLTFModel } from "../lib/model";
-import { BodyModel } from "./style";
+import { BodyModel } from "../styles/model";
 
 const NiclaVision: React.FC = () => {
   const refBody = useRef<HTMLDivElement>(null);
   const [renderer, setRenderer] = useState<any>();
   const [_camera, setCamera] = useState<any>();
-  const [target] = useState(new THREE.Vector3(-0.2, 1, 0.4));
+  const [target] = useState(new THREE.Vector3(-0.20, 0, 0.15));
   const [initialCameraPosition] = useState(
-    new THREE.Vector3(20 * Math.sin(0.2 * Math.PI), 10, 20 * Math.cos(0.2 * Math.PI)),
+    new THREE.Vector3(0 * Math.sin(0.2 * Math.PI), 150, 1 * Math.cos(0.2 * Math.PI)),
   );
   const [scene] = useState(new THREE.Scene());
   const [_controls] = useState<any>();
@@ -42,19 +42,40 @@ const NiclaVision: React.FC = () => {
       camera.lookAt(target);
       setCamera(camera);
 
+      renderer.render(scene, camera);
+
       loadGLTFModel(scene, "/gltf/nicla_vision.gltf")
         .then(() => {
           animate();
         });
 
       const animate = () => {
-        camera.position.y = 130;
+        camera.position.y = 131;
         camera.position.x = 0;
         camera.position.z = 31;
         camera.lookAt(target);
 
         renderer.render(scene, camera);
       };
+
+      const mouseMoveEvent = e => {
+        const mouseToleranceX = 0.005;
+        const mouseToleranceY = 0.03;
+
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        camera.position.y = 131 + (e.clientY - centerY) * mouseToleranceY;
+        camera.position.x = (e.clientX - centerX) * mouseToleranceX;
+        camera.position.z = 31;
+        camera.lookAt(target);
+
+        console.log(camera.position.x)
+
+        renderer.render(scene, camera);
+      }
+
+      document.addEventListener("mousemove", mouseMoveEvent, false);
 
       return () => {
         console.log('unmount');
