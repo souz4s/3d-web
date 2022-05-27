@@ -71,7 +71,7 @@ const NiclaVision: React.FC = () => {
         camera.lookAt(target);
 
         renderer.render(scene, camera);
-      }
+      };
 
       document.addEventListener("mousemove", mouseMoveEvent, false);
 
