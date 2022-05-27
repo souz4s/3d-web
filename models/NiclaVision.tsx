@@ -70,8 +70,6 @@ const NiclaVision: React.FC = () => {
         camera.position.z = 31;
         camera.lookAt(target);
 
-        console.log(camera.position.x)
-
         renderer.render(scene, camera);
       }
 
