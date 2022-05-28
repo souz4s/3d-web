@@ -10,5 +10,6 @@ export default createGlobalStyle`
     list-style: none;
     overflow: hidden;
     cursor: none;
+    font-family: 'Archivo Black', sans-serif;
   }
 `
