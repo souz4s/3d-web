@@ -7,7 +7,7 @@ const NiclaVision: React.FC = () => {
   const refBody = useRef<HTMLDivElement>(null);
   const [renderer, setRenderer] = useState<any>();
   const [_camera, setCamera] = useState<any>();
-  const [target] = useState(new THREE.Vector3(-0.25, 0, 0.2));
+  const [target] = useState(new THREE.Vector3(-0.22, 0, 0.2));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(0 * Math.sin(0.2 * Math.PI), 150, 1 * Math.cos(0.2 * Math.PI)),
   );
