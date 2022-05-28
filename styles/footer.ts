@@ -16,12 +16,9 @@ const Text = styled.div`
     width: 100vw;
     height: 82px;
     bottom: 22px;
-
-    .h1 {
-        font-family: 'Archivo Black';
-        font-size: 20px;
-        color: #333333;
-    }
+    font-family: 'Archivo Black';
+    font-size: 20px;
+    color: #333333;
 `;
 
 export { Logo, Text };
