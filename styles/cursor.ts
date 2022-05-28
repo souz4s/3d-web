@@ -12,6 +12,7 @@ const DotOutline = styled.div`
     border-radius: 50%;
     opacity: 1;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1;
 `;
 
 const Dot = styled.div`
