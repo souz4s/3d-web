@@ -9,7 +9,11 @@ const NiclaVision: React.FC = () => {
   const [_camera, setCamera] = useState<any>();
   const [target] = useState(new THREE.Vector3(-0.22, 0, 0.2));
   const [initialCameraPosition] = useState(
-    new THREE.Vector3(0 * Math.sin(0.2 * Math.PI), 150, 1 * Math.cos(0.2 * Math.PI)),
+    new THREE.Vector3(
+      0 * Math.sin(0.2 * Math.PI),
+      150,
+      1 * Math.cos(0.2 * Math.PI)
+    )
   );
   const [scene] = useState(new THREE.Scene());
   const [_controls] = useState<any>();
@@ -44,10 +48,9 @@ const NiclaVision: React.FC = () => {
 
       renderer.render(scene, camera);
 
-      loadGLTFModel(scene, "/gltf/nicla_vision.gltf")
-        .then(() => {
-          animate();
-        });
+      loadGLTFModel(scene, "/gltf/nicla_vision.gltf").then(() => {
+        animate();
+      });
 
       const animate = () => {
         camera.position.y = 131;
@@ -58,7 +61,7 @@ const NiclaVision: React.FC = () => {
         renderer.render(scene, camera);
       };
 
-      const mouseMoveEvent = e => {
+      const mouseMoveEvent = (e) => {
         const mouseToleranceX = 0.005;
         const mouseToleranceY = 0.03;
 
@@ -76,22 +79,20 @@ const NiclaVision: React.FC = () => {
       document.addEventListener("mousemove", mouseMoveEvent, false);
 
       return () => {
-        console.log('unmount');
+        console.log("unmount");
         renderer.dispose();
       };
     }
   }, []);
 
   useEffect(() => {
-    window.addEventListener('resize', handleWindowResize, false);
+    window.addEventListener("resize", handleWindowResize, false);
     return () => {
-      window.removeEventListener('resize', handleWindowResize, false);
+      window.removeEventListener("resize", handleWindowResize, false);
     };
   }, [renderer, handleWindowResize]);
 
-  return (
-    <BodyModel ref={refBody} />
-  );
+  return <BodyModel ref={refBody} />;
 };
 
 export default NiclaVision;

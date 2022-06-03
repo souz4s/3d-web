@@ -12,4 +12,4 @@ export default createGlobalStyle`
     cursor: none;
     font-family: 'Archivo Black', sans-serif;
   }
-`
+`;
