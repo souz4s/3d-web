@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Logo, Text } from "../../styles/footer";
+import { Logo, Text } from "../styles/footer";
 
 const Footer: React.FC = () => {
   return (

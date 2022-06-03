@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { DotOutline, Dot } from "../../styles/cursor";
+import { DotOutline, Dot } from "../styles/cursor";
 
 const runOnClient = (func: () => any) => {
   if (typeof window !== "undefined") {

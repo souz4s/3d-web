@@ -1,5 +1,5 @@
 import Rive from "@rive-app/react-canvas";
-import { Animation } from "../../styles/riveText";
+import { Animation } from "../styles/riveText";
 
 const RiveText: React.FC = () => {
   return (
