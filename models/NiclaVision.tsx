@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { loadGLTFModel } from "../lib/model";
-import { BodyModel } from "../styles/model";
+import * as NiclaVisionStyle from "../styles/model";
 
 const NiclaVision: React.FC = () => {
   const refBody = useRef<HTMLDivElement>(null);
@@ -92,7 +92,7 @@ const NiclaVision: React.FC = () => {
     };
   }, [renderer, handleWindowResize]);
 
-  return <BodyModel ref={refBody} />;
+  return <NiclaVisionStyle.BodyModel ref={refBody} />;
 };
 
 export default NiclaVision;

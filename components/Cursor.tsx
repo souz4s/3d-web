@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { DotOutline, Dot } from "../styles/cursor";
+import * as CursorStyle from "../styles/cursor";
 
 const runOnClient = (func: () => any) => {
   if (typeof window !== "undefined") {
@@ -109,8 +109,8 @@ const Cursor: React.FC = () => {
 
   return (
     <>
-      <DotOutline ref={dotOutline} />
-      <Dot ref={dot} />
+      <CursorStyle.DotOutline ref={dotOutline} />
+      <CursorStyle.Dot ref={dot} />
     </>
   );
 };

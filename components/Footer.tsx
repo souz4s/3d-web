@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Logo, Text } from "../styles/footer";
+import * as FoterStyle from "../styles/footer";
 
 const Footer: React.FC = () => {
   return (
     <>
-      <Logo>
+      <FoterStyle.Logo>
         <Image
           className="logo"
           src="/images/logo-marca.svg"
@@ -12,10 +12,10 @@ const Footer: React.FC = () => {
           width={50}
           height={50}
         />
-      </Logo>
-      <Text>
+      </FoterStyle.Logo>
+      <FoterStyle.Text>
         <p>EM BREVE</p>
-      </Text>
+      </FoterStyle.Text>
     </>
   );
 };
