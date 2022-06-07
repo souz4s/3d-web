@@ -41,7 +41,8 @@ const NiclaVision: React.FC = () => {
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
-      const camera = new THREE.PerspectiveCamera(0.6, 2);
+      const scale = scW / 1000;
+      const camera = new THREE.PerspectiveCamera(0.6, scale);
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
       setCamera(camera);
