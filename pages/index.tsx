@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Head>
-        <title>seugap</title>
+        <title>3d-web</title>
       </Head>
       <Cursor />
       <RiveText />
