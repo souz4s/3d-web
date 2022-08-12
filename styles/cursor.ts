@@ -13,6 +13,10 @@ const DotOutline = styled.div`
   opacity: 1;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Dot = styled.div`
