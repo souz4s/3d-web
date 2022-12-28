@@ -31,21 +31,30 @@ const NiclaVision: React.FC = () => {
   useEffect(() => {
     const { current: container } = refBody;
     if (container && !renderer) {
-      const scW = container.clientWidth;
-      const scH = container.clientHeight;
+      const container = document.getElementById("container");
 
-      const renderer = new THREE.WebGLRenderer();
+      let renderer = new THREE.WebGLRenderer();
       renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(scW, scH);
       renderer.outputEncoding = THREE.sRGBEncoding;
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
-      const scale = scW / 1000;
-      const camera = new THREE.PerspectiveCamera(0.6, scale);
+      let camera = new THREE.PerspectiveCamera(0.6);
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
       setCamera(camera);
+
+      const updateSize = function () {
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+      };
+
+      window.addEventListener("resize", updateSize);
+      updateSize();
 
       renderer.render(scene, camera);
 
@@ -93,7 +102,7 @@ const NiclaVision: React.FC = () => {
     };
   }, [renderer, handleWindowResize]);
 
-  return <NiclaVisionStyle.BodyModel ref={refBody} />;
+  return <NiclaVisionStyle.BodyModel id="container" ref={refBody} />;
 };
 
 export default NiclaVision;
